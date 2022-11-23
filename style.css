@@ -1,0 +1,216 @@
+body {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+	color: rgba(48, 48, 41, 0.834);
+    background-image: url(image/2.jpeg);
+    margin: 10px;
+    text-align: center;
+
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+            "header"
+            "hero"
+            "body"
+            "footer"
+ }
+header {
+        background: rgb(235, 183, 124);
+        padding: 10px;
+        grid-area: header;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        grid-template-areas:
+            "brand brand"
+            "nav tools"
+    }
+header .brand {
+    background: rgb(251, 177, 108);
+        grid-area: brand;
+    }
+header .nav {
+        background: rgb(251, 177, 108);
+        grid-area: nav;
+    }
+header .tools {
+    background: rgb(251, 177, 108);
+        grid-area: tools;
+    }
+
+.hero {
+    background: rgb(242, 220, 187);
+    padding: 10px;
+    grid-area: hero;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    grid-template-areas:
+        "feature"
+        "action"
+}
+
+.hero .action {
+    background: rgb(245, 207, 176);
+    grid-area: action;
+    margin: 3px;
+    padding: 3px;
+}
+.hero .action h1 {
+    padding: 10px;
+	justify-self: center;
+    align-items: center;
+    text-align: center;
+}
+.hero .feature {
+    background: rgb(245, 207, 176);
+    background-image: url(image/1.jpg);
+    margin: 3px;
+    padding: 3px;
+    grid-area: feature;
+}
+main {
+    background: rgb(243, 176, 160);
+    padding: 8px;
+    grid-area: body;
+
+    display: grid;
+    grid-template-columns: 3fr;
+    grid-gap: 7px;
+    grid-template-areas: 
+        "fea"
+        "ad"
+        "big"
+        "sidebar"
+}
+main .fea {
+    background: rgb(238, 170, 141);
+    grid-area: fea;
+    margin: 3px;
+    padding: 2px;
+}
+
+main .phone-ad {
+    grid-area: ad;
+}
+
+main .big {
+
+    background: rgb(247, 222, 167);
+    grid-area: big;
+    margin: 3px;
+    padding: 7px;
+}
+
+footer {
+    background: rgb(234, 156, 125);
+    padding: 13px;
+    grid-area: footer;
+}
+.desktop-ad {
+    grid-area: ad;
+    display: none;
+    height: 100%;
+}
+.hero .feature {
+    display: none;
+}
+.sidebar {
+    background: rgb(246, 225, 194);
+    grid-area: sidebar;
+    display: none;
+}
+
+.sidebar p {
+    background: rgb(247, 208, 149);
+    height: 100%;
+}
+.phone-ad img {
+    max-width: 100%;
+}
+
+.desktop-ad img {
+   max-width: 100%;
+}
+
+@media (min-width: 576px) {
+    body {
+        display: grid;
+        grid-template-rows: auto auto 1fr auto auto;
+        grid-template-areas:
+            "header"
+            "hero"
+            "body"
+            "sidebar"
+            "footer"
+    }
+    header {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-gap: 7px;
+        grid-template-areas:
+            "brand nav tools"
+    }
+
+    .hero {
+        grid-template-areas:
+            "feature"
+            "action"
+    }
+
+    .hero .feature {
+        display: block;
+    }
+   
+    main {
+        grid-area: body;
+        grid-template-columns: 2.5fr 1fr;
+        grid-template-rows: 30% 70%;
+        grid-template-areas:
+            "fea ad"
+            "big big"
+    } 
+    .sidebar {
+    display: grid;
+    } 
+    .phone-ad img {
+       height: 100%;
+    }
+}
+
+
+@media (min-width: 992px) {
+    body {
+        grid-template-columns: 1fr 350px;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+            "header header"
+            "hero ad"
+            "body sidebar"
+            "footer footer"
+    }
+
+    .hero {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "feature action"
+    }
+
+    main {
+        grid-template-columns: 1fr 2.5fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "fea big"
+    }
+
+    .phone-ad {
+        display: none;
+    }
+
+    .desktop-ad {
+        width: 100%;
+        display: block;
+    }
+}
+
+	
